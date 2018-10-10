@@ -1,26 +1,27 @@
 package com.kodilla.testing;
 
-import com.kodilla.testing.calculator.Calculator;
-import com.kodilla.testing.user.SimpleUser;
+import com.kodilla.testing.collections.OddNumbersExterminator;
+
+import java.util.ArrayList;
 
 public class TestingMain {
     public static void main(String[] args){
 
-        Calculator count = new Calculator();
+        ArrayList<Integer> testArray = new ArrayList<Integer>();
+        testArray.add(1);
+        testArray.add(2);
+        testArray.add(3);
+        testArray.add(4);
+        testArray.add(5);
+        testArray.add(6);
 
-        int resultAdd = count.add(12,10);
-        int resultSubstract = count.substract(11, 5);
+        OddNumbersExterminator test = new OddNumbersExterminator();
+        ArrayList testingArray = test.exterminate(testArray);
 
-        if (resultAdd == 22){
-            System.out.println("Test result correct");
-        } else {
-            System.out.println("Test result error" + "\n");
+        for(int i=0; i < testingArray.size(); i++) {
+            System.out.println("Parzysta liczba: " + testingArray.get(i));
         }
 
-        if (resultSubstract == 6){
-            System.out.println("Test result correct");
-        } else {
-            System.out.println("Test result error" + "\n");
-        }
+
     }
 }

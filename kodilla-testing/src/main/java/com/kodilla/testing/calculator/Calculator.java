@@ -11,7 +11,4 @@ public class Calculator {
             return  a - b;
         }
 
-        public int getA() { return a; }
-        public int getB() { return b; }
-
 }
