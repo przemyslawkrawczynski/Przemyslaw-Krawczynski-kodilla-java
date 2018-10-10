@@ -30,11 +30,11 @@ public class CollectionTestSuite {
         testArray.add(3);
 
         OddNumbersExterminator test = new OddNumbersExterminator();
-        ArrayList testingArray = test.exterminate(new ArrayList<Integer>());
+        ArrayList<Integer> testingArray = test.exterminate(new ArrayList<Integer>());
 
         ArrayList result = new ArrayList<Integer>();
 
-        Assert.assertEquals(testingArray, result);
+        Assert.assertEquals(result, testingArray);
     }
     @Test
     public void testOddNumbersExterminatorNormalList() {
@@ -44,11 +44,11 @@ public class CollectionTestSuite {
         testArray.add(2);
 
         OddNumbersExterminator test = new OddNumbersExterminator();
-        ArrayList testingArray = test.exterminate(testArray);
+        ArrayList<Integer> testingArray = test.exterminate(testArray);
 
         ArrayList<Integer> result = new ArrayList<Integer>();
         result.add(2);
 
-        Assert.assertEquals(testingArray, result);
+        Assert.assertEquals(result, testingArray);
     }
 }
