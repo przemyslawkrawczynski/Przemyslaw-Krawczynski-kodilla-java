@@ -14,7 +14,11 @@ public class TestingMain {
         test.addFigure(s1);
         test.addFigure(s2);
         test.addFigure(s3);
-        System.out.println(test.showFigures());
 
+        Shape obj = test.getFigure(1);
+        System.out.println(obj.getShapeName());
     }
 }
+
+
+

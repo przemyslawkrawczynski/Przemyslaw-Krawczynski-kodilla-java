@@ -12,11 +12,14 @@ public class ShapeCollector {
 
     public void removeFigure(Shape shape) {
         shapeList.remove(shape);
-
     }
 
     public Shape getFigure(int n) {
-        return shapeList.get(n);
+        if(n > -1 && n < shapeList.size() ) {
+            return shapeList.get(n);
+        } else {
+            return null;
+        }
     }
 
     public String showFigures() {
