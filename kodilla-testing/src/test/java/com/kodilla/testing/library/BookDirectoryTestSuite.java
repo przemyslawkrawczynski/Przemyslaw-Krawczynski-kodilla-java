@@ -78,8 +78,8 @@ public class BookDirectoryTestSuite {
         verify(libraryDatabaseMock, times(0)).listBooksWithCondition(anyString());
     }
 
-    private List<Book> generateListOfNBooks(int booksQuantity) {
-        List<Book> resultList = new ArrayList<Book>();
+    private ArrayList<Book> generateListOfNBooks(int booksQuantity) {
+        ArrayList<Book> resultList = new ArrayList<Book>();
         for (int n = 1; n <= booksQuantity; n++) {
             Book theBook = new Book("Title " + n, "Author " + n, 1970 + n);
             resultList.add(theBook);
@@ -89,29 +89,36 @@ public class BookDirectoryTestSuite {
     // Zadanie 6.6
 
     @Test
-    public void testlistBookInHandsOfWhenBorrowedBookNull() {
+    public void testlistBookInHandsOf() {
         //Given
-        LibraryUser user = new LibraryUser("John", "Kovalsky", "86090516216");
+        LibraryUser user0Book = new LibraryUser("John", "Kovalsky", "84090516216");
+        LibraryUser user1Book = new LibraryUser("Sam", "Novicky", "83090516216");
+        LibraryUser user5Book = new LibraryUser("Alex", "Malinovsky", "86090516216");
+
         LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
-        ArrayList<Book> resultList = new ArrayList<>();
 
-        when(libraryDatabaseMock.listBooksInHandsOf(user)).thenReturn(resultList);
+        ArrayList<Book> resultList0Books = new ArrayList<>();
+        ArrayList<Book> resultList1Book = generateListOfNBooks(1);
+        ArrayList<Book> resultList5Books = generateListOfNBooks(5);
+
+        when(libraryDatabaseMock.listBooksInHandsOf(user0Book)).thenReturn(resultList0Books);
+        when(libraryDatabaseMock.listBooksInHandsOf(user1Book)).thenReturn(resultList1Book);
+        when(libraryDatabaseMock.listBooksInHandsOf(user5Book)).thenReturn(resultList5Books);
 
         //When
-        List<Book> userBookList = bookLibrary.listBookInHandsOf(user);
-        int value = userBookList.size();
-        int expectedResult = 0;
+        List<Book> userBookList1 = bookLibrary.listBookInHandsOf(user0Book);
+        List<Book> userBookList2 = bookLibrary.listBookInHandsOf(user1Book);
+        List<Book> userBookList3 = bookLibrary.listBookInHandsOf(user5Book);
 
-        Assert.assertEquals(expectedResult, value);
+        int value1 = userBookList1.size();
+        int value2 = userBookList2.size();
+        int value3 = userBookList3.size();
 
-
-    }
-    public void testlistBookInHandsOfWhenBorrowedBookOne() {
-
-    }
-    public void testlistBookInHandsOfWhenBorrowedBook5() {
-
+        // Then
+        Assert.assertEquals(0, value1);
+        Assert.assertEquals(1, value2);
+        Assert.assertEquals(5, value3);
     }
 }
 

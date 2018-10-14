@@ -21,7 +21,10 @@ public class BookLibrary {
 
     public List<Book> listBookInHandsOf(LibraryUser libraryUser) {
         List<Book> listOfBookBorrowed = new ArrayList<Book>();
-      //  listOfBookBorrowed.add(new Book("Jan", "Testowanie", 2010));
+
+        List<Book> resultList = libraryDatabase.listBooksInHandsOf(libraryUser);
+
+        listOfBookBorrowed = resultList;
 
        return listOfBookBorrowed;
 
