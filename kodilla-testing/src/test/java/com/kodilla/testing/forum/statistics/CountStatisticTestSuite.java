@@ -195,8 +195,8 @@ public class CountStatisticTestSuite {
 
         // Calculating Statistics...
 
-        boolean forumHasUsers = stat.getForumHasUser();
-        boolean expectedResult = false;
+        int forumHasUsers = stat.getUserNumbers();
+        int expectedResult = 0;
 
         Assert.assertEquals(expectedResult, forumHasUsers);
 
@@ -209,10 +209,7 @@ public class CountStatisticTestSuite {
         Statistics statisticMock = mock(Statistics.class);
         CountStatistics stat = new CountStatistics();
 
-        ArrayList<String> userList = new ArrayList<String>();
-
-        int userAmount = 100;
-        addObjectoToList(userAmount, userList);
+        ArrayList<String> userList = addObjectoToList(100);
 
         when(statisticMock.usersNames()).thenReturn(userList);
         when(statisticMock.postsCount()).thenReturn(200);
@@ -221,7 +218,6 @@ public class CountStatisticTestSuite {
         // Calculating Statistics...
         stat.calculateAdvStatistics(statisticMock);
 
-
         double userListSize = stat.getAvgPostsPerUser();
         double expectedResult = 2.0;
 
@@ -229,10 +225,12 @@ public class CountStatisticTestSuite {
 
     }
 
-    public void addObjectoToList(int n, ArrayList<String> list) {
+    public ArrayList<String> addObjectoToList(int n) {
+        ArrayList<String> userList = new ArrayList<>();
         for(int i=0; i<n; i++) {
             String user = "" + "User" + (n + 1);
-            list.add(user);
+            userList.add(user);
         }
+        return userList;
     }
 }

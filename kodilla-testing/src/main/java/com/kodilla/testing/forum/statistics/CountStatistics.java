@@ -10,11 +10,11 @@ public class CountStatistics {
     private double avgPostsPerUser;
     private double avgCommentPerUser;
     private double avgCommentPerPost;
-    private boolean forumHasUsers;
+
 
     public void calculateAdvStatistics(Statistics statistics) {
 
-       if(statistics.usersNames().size()>=0) {
+       if(statistics.usersNames().size()>0) {
 
             userNumbers = statistics.usersNames().size();
             totalPostNumber = statistics.postsCount();
@@ -23,8 +23,6 @@ public class CountStatistics {
             avgCommentPerUser = totalCommentNumber / (new Double(userNumbers));
             avgCommentPerPost = totalCommentNumber / new Double(totalPostNumber);
 
-       } else {
-            forumHasUsers = false;
        }
     }
 
@@ -61,7 +59,4 @@ public class CountStatistics {
         return avgCommentPerPost;
     }
 
-    public boolean getForumHasUser() {
-        return forumHasUsers;
-    }
 }
