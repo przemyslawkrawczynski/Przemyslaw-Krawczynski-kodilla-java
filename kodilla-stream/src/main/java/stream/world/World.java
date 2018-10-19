@@ -5,7 +5,7 @@ import java.util.HashSet;
 
 public class World {
 
-    HashSet<Continent> listOfContinent = new HashSet<Continent>();
+    private HashSet<Continent> listOfContinent = new HashSet<Continent>();
 
     public void addContinent(Continent continent) {
         listOfContinent.add(continent);

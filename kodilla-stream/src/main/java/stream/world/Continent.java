@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Continent {
     private String continentName;
-    HashSet<Country> countryListOnContinent = new HashSet<Country>();
+    private HashSet<Country> countryListOnContinent = new HashSet<Country>();
 
     public Continent(String continentName) {
         this.continentName = continentName;
