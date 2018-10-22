@@ -41,6 +41,7 @@ public class RpsRunner {
             }
         }
         System.out.println(user.getUserName() + " thank you for game!");
+        in.close();
     }
 }
 
