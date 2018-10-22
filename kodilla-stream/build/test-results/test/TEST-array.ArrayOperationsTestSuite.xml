@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="array.ArrayOperationsTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-22T14:51:35" hostname="DESKTOP-BFC60PP" time="0.009">
+  <properties/>
+  <testcase name="testGetAvarage" classname="array.ArrayOperationsTestSuite" time="0.009"/>
+  <system-out><![CDATA[1
+3
+12
+6
+1
+2
+11
+2
+1
+2
+13
+2
+1
+2
+16
+2
+1
+12
+1
+2
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
