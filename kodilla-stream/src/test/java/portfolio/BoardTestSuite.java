@@ -79,7 +79,6 @@ public class BoardTestSuite {
     public void testAddTaskListAverageWorkingOnTask() {
         Board project = prepareTestData();
         List<TaskList> toDoTaskList = new ArrayList<>();
-        toDoTaskList.add(new TaskList("To do"));
         toDoTaskList.add(new TaskList("In progress"));
 
         double result = project.getTaskLists().stream()
@@ -89,8 +88,8 @@ public class BoardTestSuite {
                 .mapToInt(t -> t.intValue())
                 .average().getAsDouble();
 
-        double expectedResult = 28.0;
+        double expectedResult = 18.33;
 
-        Assert.assertEquals(expectedResult, result, 0);
+        Assert.assertEquals(expectedResult, result, 0.01);
     }
 }
