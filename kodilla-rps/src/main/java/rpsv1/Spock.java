@@ -14,10 +14,6 @@ public class Spock implements PlayerInfo {
 
     @Override
     public boolean gameResult(String player) {
-        if(player.equals("Scissors") || player.equals("Stone")) {
-            return true;
-        } else {
-            return false;
-        }
+        return player.equals("Scissors") || player.equals("Stone");
     }
 }

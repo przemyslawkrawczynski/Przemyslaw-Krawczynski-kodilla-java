@@ -14,11 +14,7 @@ public class Stone implements PlayerInfo {
 
     @Override
     public boolean gameResult(String player) {
-        if(player.equals("Scissors") || player.equals("Lizard")) {
-            return true;
-        } else {
-            return false;
-        }
+        return player.equals("Scissors") || player.equals("Lizard");
     }
 }
 
