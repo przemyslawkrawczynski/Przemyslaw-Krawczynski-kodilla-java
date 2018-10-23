@@ -14,7 +14,7 @@ public class Paper implements PlayerInfo {
 
     @Override
     public boolean gameResult(String player) {
-        if(player == "Stone") {
+        if(player.equals("Stone")) {
             return true;
         } else {
             return false;

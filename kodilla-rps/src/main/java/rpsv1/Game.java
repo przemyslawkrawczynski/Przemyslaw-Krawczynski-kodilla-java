@@ -35,7 +35,7 @@ public class Game {
 
             System.out.println(userName + " show [" + uPlayer + "] | Computer show [" + cPlayer + "]");
 
-            if (cPlayer == uPlayer) {
+            if (cPlayer.equals(uPlayer)) {
                 System.out.println("We have tie.\n");
                 numbersOfTie++;
 

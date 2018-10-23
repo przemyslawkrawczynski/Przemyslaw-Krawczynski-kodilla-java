@@ -14,7 +14,7 @@ public class Stone implements PlayerInfo {
 
     @Override
     public boolean gameResult(String player) {
-        if(player == "Scissors") {
+        if(player.equals("Scissors")) {
             return true;
         } else {
             return false;

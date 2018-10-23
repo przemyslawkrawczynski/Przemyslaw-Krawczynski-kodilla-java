@@ -1,5 +1,4 @@
 package rpsv1;
-
 import java.util.Scanner;
 
 public class RpsRunner {
@@ -31,13 +30,18 @@ public class RpsRunner {
             Game play = new Game(user, numbersOfPlay, stat);
             play.startGame();
 
-            if (!user.userStillPlayDecisions()){
-                if (!user.userQuitDecisions()){
-                    System.out.println("Good decision, let`s play Again!\n");
-                    stillPlay = true;
-                } else {
-                    stillPlay = false;
-                }
+//            if (!user.userStillPlayDecisions()){
+//                if (!user.userQuitDecisions()){
+//                    System.out.println("Good decision, let`s play Again!\n");
+//                    stillPlay = true;
+//                } else {
+//                    stillPlay = false;
+//                }
+//            }
+            if (!user.userStillPlayDecisions() && user.userQuitDecisions()) {
+                stillPlay = false;
+            } else {
+                System.out.println("Good decision, let`s play Again!\n");
             }
         }
         System.out.println(user.getUserName() + " thank you for game!");

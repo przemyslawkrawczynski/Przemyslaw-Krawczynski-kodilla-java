@@ -14,7 +14,7 @@ public class Scissors implements PlayerInfo {
 
     @Override
     public boolean gameResult(String player) {
-        if(player == "Paper") {
+        if(player.equals("Paper")) {
             return true;
         } else {
             return false;

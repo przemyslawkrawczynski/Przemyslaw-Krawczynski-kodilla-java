@@ -75,24 +75,24 @@ public class User {
         while (!corretChoice) {
 
             Scanner in = new Scanner(System.in);
-            int userChoice = in.nextInt();
+            String userChoice = in.next();
 
             switch (userChoice) {
-                case 1:
+                case "1":
                     userPlayer = new Scissors();
                     System.out.print("You choose Scissors to game. ");
                     System.out.println("There are Scissors skills: " + userPlayer.getPlayerSkills() + "\n");
                     corretChoice = true;
                     break;
 
-                case 2:
+                case "2":
                     userPlayer = new Stone();
                     System.out.print("You choose Stone to game. ");
                     System.out.println("There are Stone skills: " + userPlayer.getPlayerSkills()+ "\n");
                     corretChoice = true;
                     break;
 
-                case 3:
+                case "3":
                     userPlayer = new Paper();
                     System.out.print("You choose Paper to game. ");
                     System.out.println("There are Scissors skills: " + userPlayer.getPlayerSkills() + "\n");
