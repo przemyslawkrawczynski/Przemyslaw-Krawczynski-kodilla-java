@@ -8,7 +8,7 @@ public class ComputerPlayer {
     public PlayerInfo getComputerPlayer() {
 
         Random computerPlayerGenerator = new Random();
-        int computerChoice = computerPlayerGenerator.nextInt(3);
+        int computerChoice = computerPlayerGenerator.nextInt(5);
 
         switch (computerChoice) {
             case 0:
@@ -19,6 +19,12 @@ public class ComputerPlayer {
                 break;
             case 2:
                 this.computerPlayer = new Scissors();
+                break;
+            case 3:
+                this.computerPlayer = new Spock();
+                break;
+            case 4:
+                this.computerPlayer = new Lizard();
                 break;
         }
 

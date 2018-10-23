@@ -9,12 +9,12 @@ public class Scissors implements PlayerInfo {
 
     @Override
     public String getPlayerSkills() {
-        return "Scissors win with paper, and lose with stone.";
+        return "Scissors wins with Paper and Lizard, and loses with Stone and Spock.";
     }
 
     @Override
     public boolean gameResult(String player) {
-        if(player.equals("Paper")) {
+        if(player.equals("Paper") || player.equals("Lizard")) {
             return true;
         } else {
             return false;

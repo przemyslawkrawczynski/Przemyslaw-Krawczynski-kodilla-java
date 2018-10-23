@@ -70,7 +70,7 @@ public class User {
     public void chooseUserPlayer() {
 
         boolean corretChoice = false;
-        System.out.println("Choose player to game. -> [1] - Scissors | [2] - Stone | [3] - Paper" );
+        System.out.println("Choose player to game. -> [1] - Scissors | [2] - Stone | [3] - Paper | [4] - Lizard | [5] - Spock\n");
 
         while (!corretChoice) {
 
@@ -95,7 +95,19 @@ public class User {
                 case "3":
                     userPlayer = new Paper();
                     System.out.print("You choose Paper to game. ");
-                    System.out.println("There are Scissors skills: " + userPlayer.getPlayerSkills() + "\n");
+                    System.out.println("There are Paper skills: " + userPlayer.getPlayerSkills() + "\n");
+                    corretChoice = true;
+                    break;
+                case "4":
+                    userPlayer = new Lizard();
+                    System.out.print("You choose Lizard to game. ");
+                    System.out.println("There are Lizard skills: " + userPlayer.getPlayerSkills() + "\n");
+                    corretChoice = true;
+                    break;
+                case "5":
+                    userPlayer = new Spock();
+                    System.out.print("You choose Spock to game. ");
+                    System.out.println("There are Spock skills: " + userPlayer.getPlayerSkills() + "\n");
                     corretChoice = true;
                     break;
                 default:

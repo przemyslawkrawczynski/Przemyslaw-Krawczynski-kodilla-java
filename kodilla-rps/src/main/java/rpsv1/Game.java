@@ -29,7 +29,6 @@ public class Game {
             ComputerPlayer cp = new ComputerPlayer();
             PlayerInfo computerPlayer = cp.getComputerPlayer();
 
-           // String cPlayer = computerPlayer.getPlayerName();
             String uPlayer = user.getUserPlayer().getPlayerName();
             String cPlayer = computerPlayer.getPlayerName();
 
