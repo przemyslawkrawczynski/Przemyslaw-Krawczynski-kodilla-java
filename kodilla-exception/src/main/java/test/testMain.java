@@ -1,10 +1,9 @@
 package test;
 
-import java.io.IOException;
 import java.time.LocalDate;
 
 public class testMain {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         FirstChallenge firstChallenge = new FirstChallenge();
         ArithmeticException ex = null;
