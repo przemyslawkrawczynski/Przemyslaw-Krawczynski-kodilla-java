@@ -12,7 +12,6 @@ public class ExceptionHandling {
         } catch (Exception e) {
 
             System.out.println("We have new Exception-->" + e);
-
         }
     }
 }
