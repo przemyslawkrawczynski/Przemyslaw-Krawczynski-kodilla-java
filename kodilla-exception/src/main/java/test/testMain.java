@@ -6,25 +6,16 @@ public class testMain {
     public static void main(String[] args) {
 
         FirstChallenge firstChallenge = new FirstChallenge();
-        ArithmeticException ex = null;
 
         try {
 
-           double result = firstChallenge.divide(3, 0);
+            double result = firstChallenge.divide(3, 0);
 
         } catch (ArithmeticException e) {
 
             System.out.println("You can`t divide by zero.");
-            ex = e;
+            System.out.println(LocalDate.now() + " | We have exception -> " + e);
 
-        } finally {
-            LocalDate date = LocalDate.now();
-
-            if (ex != null) {
-                System.out.println(date + " | We have exception -> " + ex);
-            } else {
-                System.out.println("Divide atributs were ok!");
-            }
         }
     }
 }
