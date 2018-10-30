@@ -3,7 +3,7 @@ package test;
 public class FlightMain {
     public static void main (String[] args) {
 
-        Flight flight = new Flight("Belgrad", "Warsaw");
+        Flight flight = new Flight("Paris", "Warsaw");
         FlightSearch search = new FlightSearch();
 
         try {
