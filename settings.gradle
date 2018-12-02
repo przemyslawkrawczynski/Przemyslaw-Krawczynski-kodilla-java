@@ -6,4 +6,5 @@ findProject(':kodilla-rps')?.name = 'rps'
 include 'kodilla-exception'
 findProject(':kodilla-exception')?.name = 'exception'
 include 'own-projects'
+include 'kodilla-good-patterns'
 
