@@ -1,47 +1,24 @@
 package good.patterns.flightSerwis;
-import java.util.ArrayList;
+import java.util.List;
 
 public class FlightSearch {
 
     public static void main(String args[]) {
 
         GenerateData gd = new GenerateData();
-        ArrayList<Airport> cdl = gd.generateFlightData();
+        List<Airport> cdl = gd.generateFlightData();
+        FlightQuery flightQuery = new FlightQuery();
 
-        // FlightList City
-
-        System.out.println("Lista lotów z Krakowa:");
-
-        cdl.stream()
-                .filter(e -> e.getAirportName().equals("Kraków"))
-                .flatMap(e -> e.getCityDepartureList().getCityFlightList().entrySet().stream())
-                .map(e -> new String("Miasto docelowe:"+ e.getKey() + " | godziny " + e.getValue() ))
+        flightQuery.flightsFromCity("Kraków", cdl).stream()
                 .forEach(System.out::println);
 
-        // All Flights to Wrocław from all Airports
+        flightQuery.flightsToCity("Wrocław",cdl).stream()
+                .forEach(System.out::println);
 
-        System.out.println();
-        System.out.println("Wszystkie loty do Wrocławia z innych lotnisk.");
+        flightQuery.flightsFromCityToCity("Kraków", "Warsaw", cdl).stream()
+                .forEach(System.out::println);
 
-        cdl.stream()
-                .forEach(e -> e.searchFlightToCity("Wrocław"));
+        flightQuery.flightToCityByCity("Kraków", "Gdańsk", "Wrocław",cdl );
 
-
-        //All Flight to Wrocław from Kraków
-
-        System.out.println();
-        System.out.println("Wszystkie loty do Wrocławia z Krakowa");
-        cdl.stream()
-                .filter(e -> e.getAirportName().equals("Kraków"))
-                .forEach(e -> e.searchFlightToCity("Wrocław"));
-
-        // Transit
-
-        System.out.println();
-        System.out.println("Lista lotów z Krakowa do Warszawy przez Wrocław:");
-
-        cdl.stream()
-                .filter(e -> e.getAirportName().equals("Kraków") || e.getAirportName().equals("Wrocław"))
-                .forEach(e -> e.getCityDepartureList().getDestinationFlightList(e.getCityDepartureList(), "Wrocław", "Warsaw"));
-        }
+    }
 }

@@ -2,6 +2,7 @@ package good.patterns.flightSerwis;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Airport {
@@ -21,11 +22,15 @@ public class Airport {
         return cityDepartureList;
     }
 
-    public void searchFlightToCity(String city) {
+    public List<String> searchFlightToCity(String city) {
+
+        List<String> flightList = new ArrayList<>();
         for (Map.Entry<String, ArrayList<LocalTime>> entry : cityDepartureList.getCityFlightList().entrySet()) {
             if(entry.getKey().equals(city)) {
-                System.out.println("Loty do " + city + " z lotniska " + getAirportName() + " dostępne są w godzinach " + entry.getValue());
+                String flight = "Loty do " + city + " z lotniska " + getAirportName() + " dostępne są w godzinach " + entry.getValue();
+                flightList.add(flight);
             }
         }
+        return flightList;
     }
 }
