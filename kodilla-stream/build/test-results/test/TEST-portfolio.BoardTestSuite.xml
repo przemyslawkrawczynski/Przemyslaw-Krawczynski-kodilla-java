@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="portfolio.BoardTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-22T14:51:35" hostname="DESKTOP-BFC60PP" time="0.015">
+<testsuite name="portfolio.BoardTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-29T16:44:09" hostname="DESKTOP-BFC60PP" time="0.016">
   <properties/>
-  <testcase name="testAddTaskListAverageWorkingOnTask" classname="portfolio.BoardTestSuite" time="0.015"/>
+  <testcase name="testAddTaskListAverageWorkingOnTask" classname="portfolio.BoardTestSuite" time="0.016"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
