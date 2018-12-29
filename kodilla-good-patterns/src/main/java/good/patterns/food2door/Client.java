@@ -1,10 +1,10 @@
 package good.patterns.food2door;
 
 public class Client {
-    String clientName;
-    String clientSurname;
-    String clientAdress;
-    String clientMail;
+    private String clientName;
+    private String clientSurname;
+    private String clientAdress;
+    private String clientMail;
 
     public Client(String clientName, String clientSurname, String clientAdress, String clientMail) {
         this.clientName = clientName;

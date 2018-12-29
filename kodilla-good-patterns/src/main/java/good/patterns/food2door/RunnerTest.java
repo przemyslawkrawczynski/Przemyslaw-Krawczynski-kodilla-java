@@ -1,13 +1,13 @@
 package good.patterns.food2door;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class RunnerTest {
     public static void main(String args[]) {
         GenerateData gd = new GenerateData();
         gd.generateData();
 
-        ArrayList<Product> allProducts = gd.getAllProductList();
+        List<Product> allProducts = gd.getAllProductList();
         OrderRequest orderRequest  = gd.getSimpleOrderRequest();
 
         SupplierSystemOptions supplier = orderRequest.getProduct().getSupplier();

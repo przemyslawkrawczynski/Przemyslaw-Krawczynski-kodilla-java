@@ -1,9 +1,9 @@
 package good.patterns.food2door;
 
 public class Product {
-    String name;
-    int price;
-    SupplierSystemOptions supplier;
+    private String name;
+    private int price;
+    private SupplierSystemOptions supplier;
 
     public Product(String name, int price, SupplierSystemOptions supplier) {
         this.name = name;

@@ -6,8 +6,8 @@ import java.util.Map;
 public class GlutenFreeSuppliers implements SupplierSystemOptions {
 
     private HashMap<Product, Integer> productList = new HashMap<>();
-    String supplierName, supplierAdress, supplierMail;
-    int supplierPhone;
+    private String supplierName, supplierAdress, supplierMail;
+    private int supplierPhone;
 
     public GlutenFreeSuppliers(String supplierName, String supplierAdress, String supplierMail, int supplierPhone) {
         this.supplierName = supplierName;

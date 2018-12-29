@@ -1,10 +1,10 @@
 package good.patterns.food2door;
 
 public class Order {
-    Client client;
-    Product product;
-    Integer amount;
-    boolean isRealized;
+    private Client client;
+    private Product product;
+    private Integer amount;
+    private boolean isRealized;
 
     public Order(Client client, Product product, Integer amount, boolean isRealized) {
         this.client = client;

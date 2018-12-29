@@ -7,7 +7,7 @@ public class FoodSuppliers implements SupplierSystemOptions {
 
     private HashMap<Product, Integer> productList = new HashMap<>();
 
-    String supplierName, supplierAdress, supplierMail;
+    private String supplierName, supplierAdress, supplierMail;
     int supplierPhone;
 
     public FoodSuppliers(String supplierName, String supplierAdress, String supplierMail, int supplierPhone) {

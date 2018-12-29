@@ -1,9 +1,9 @@
 package good.patterns.challenges.productOrderService;
 
 public class OrderStatus {
-    public User user;
-    public Product product;
-    public boolean isSended;
+    private User user;
+    private Product product;
+    private boolean isSended;
 
     public OrderStatus(User user, Product product, boolean isSended) {
         this.user = user;
