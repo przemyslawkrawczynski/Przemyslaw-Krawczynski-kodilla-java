@@ -13,7 +13,7 @@ public class FlightQuery {
         System.out.println("Lista lotów z ->" + city);
 
         List<String> flightList = airportList.stream()
-                .filter(e -> e.getAirportName().equals("Kraków"))
+                .filter(e -> e.getAirportName().equals(city))
                 .flatMap(e -> e.getCityDepartureList().getCityFlightList().entrySet().stream())
                 .map(e -> new String("Miasto docelowe:" + e.getKey() + " | godziny " + e.getValue()))
                 .collect(Collectors.toList());
