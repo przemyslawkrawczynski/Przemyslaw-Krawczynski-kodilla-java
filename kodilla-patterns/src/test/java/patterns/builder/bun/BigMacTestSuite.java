@@ -11,7 +11,7 @@ public class BigMacTestSuite {
         BigMac bigMac = new BigMac.BigMacBuilder()
                 .bun("Width Sezam")
                 .burgers(1)
-                .souce("Spicy")
+                .sauce("Standard")
                 .ingredients("Extra Cheese")
                 .ingredients("Becon")
                 .build();

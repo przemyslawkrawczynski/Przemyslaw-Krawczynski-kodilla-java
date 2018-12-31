@@ -5,14 +5,16 @@ import java.util.stream.Collectors;
 public final class BigMac {
     private final String bun;
     private final int burgers;
-    private final String souce;
+    private final String sauce;
     private final List<String> ingredients;
 
     public static class BigMacBuilder {
         private String bun;
         private int burgers;
-        private String souce;
-        private List<String> ingredients = new BasicIngredients().basicIngredientsList();
+        private String sauce;
+        private Ingredients ingredients = new Ingredients();
+        private Sauce sauceList = new Sauce();
+        private List<String> ingredientsList = ingredients.basicIngredientsList();
 
         public BigMacBuilder bun(String bun) {
             this.bun = bun;
@@ -28,25 +30,34 @@ public final class BigMac {
             }
         }
 
-        public BigMacBuilder souce(String souce) {
-            this.souce = souce;
-            return this;
+        public BigMacBuilder sauce(String sauce) {
+            if (sauceList.checkSouceList(sauce)) {
+                this.sauce = sauce;
+                return this;
+            } else {
+                throw new IllegalStateException("You can use only Barbeque, Standard or 1000 Island souce.");
+            }
         }
 
         public BigMacBuilder ingredients(String ingriedient) {
-            ingredients.add(ingriedient);
-            return this;
+
+            if (ingredients.checkIngredient(ingriedient)) {
+                ingredientsList.add(ingriedient);
+                return this;
+            } else {
+                throw new IllegalStateException("You can`t add " + ingriedient + " to your BigMac");
+            }
         }
 
         public BigMac build() {
-            return new BigMac(bun, burgers, souce, ingredients);
+            return new BigMac(bun, burgers, sauce, ingredientsList);
         }
     }
 
-    private BigMac(final String bun, final int burgers,final String souce, final List<String> ingredients) {
+    private BigMac(final String bun, final int burgers,final String sauce, final List<String> ingredients) {
         this.bun = bun;
         this.burgers = burgers;
-        this.souce = souce;
+        this.sauce = sauce;
         this.ingredients = ingredients;
     }
 
@@ -69,7 +80,7 @@ public final class BigMac {
     }
 
     public String getSouce() {
-        return souce;
+        return sauce;
     }
 
     public List<String> getIngredients() {
