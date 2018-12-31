@@ -1,8 +1,13 @@
 package com.kodilla.spring.portfolio;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class TaskList {
     List<String> tasks;
 
@@ -17,4 +22,6 @@ public class TaskList {
     public String getTaskFromList(int position) {
         return tasks.get(position);
     }
+
+
 }

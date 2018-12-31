@@ -25,9 +25,9 @@ public class SocialTestSuits {
         String result2 = yPerson.sharePost();
         String result3 = xPerson.sharePost();
 
-        Assert.assertEquals(result1, "FB");
-        Assert.assertEquals(result2, "TW");
-        Assert.assertEquals(result3, "SC");
+        Assert.assertEquals("FB", result1);
+        Assert.assertEquals("TW", result2);
+        Assert.assertEquals("SC", result3);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class SocialTestSuits {
         String newStrategy = millenials.sharePost();
 
         //Then
-        Assert.assertEquals(newStrategy, "SC");
+        Assert.assertEquals("SC", newStrategy);
 
     }
 }
