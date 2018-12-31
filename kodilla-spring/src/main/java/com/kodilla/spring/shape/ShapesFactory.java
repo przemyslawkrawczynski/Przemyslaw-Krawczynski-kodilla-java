@@ -7,10 +7,7 @@ import java.util.Random;
 
 @Configuration
 public class ShapesFactory {
-    @Bean
-    public Square createSquare() {
-        return new Square();
-    }
+
     @Bean
     public Shape chosenShape() {
         Shape theShape;

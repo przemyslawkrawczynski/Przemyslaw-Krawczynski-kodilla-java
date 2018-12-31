@@ -9,4 +9,5 @@ include 'own-projects'
 include 'kodilla-good-patterns'
 include 'kodilla-spring-intro'
 include 'kodilla-spring'
+include 'kodilla-patterns'
 

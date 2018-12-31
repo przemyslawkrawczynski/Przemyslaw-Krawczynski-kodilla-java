@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.spring.portfolio.BoardTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-12-31T17:16:15" hostname="DESKTOP-BFC60PP" time="0.091">
+  <properties/>
+  <testcase name="testRead" classname="com.kodilla.spring.portfolio.BoardTestSuite" time="0.091"/>
+  <system-out><![CDATA[2018-12-31 18:16:15.407  INFO 3764 --- [    Test worker] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@71bb5f9d: startup date [Mon Dec 31 18:16:15 CET 2018]; root of context hierarchy
+2018-12-31 18:16:15.442  INFO 3764 --- [    Test worker] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'board' with a different definition: replacing [Generic bean: class [com.kodilla.spring.portfolio.Board]; scope=singleton; abstract=false; lazyInit=false; autowireMode=0; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=null; factoryMethodName=null; initMethodName=null; destroyMethodName=null; defined in file [D:\kodilla-course\kodilla-spring\build\classes\java\main\com\kodilla\spring\portfolio\Board.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=boardConfig; factoryMethodName=board; initMethodName=null; destroyMethodName=(inferred); defined in com.kodilla.spring.portfolio.BoardConfig]
+2018-12-31 18:16:15.487  INFO 3764 --- [    Test worker] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+1 task in DoneList
+1 tast in InProgressList
+1 task in ToDoList
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
