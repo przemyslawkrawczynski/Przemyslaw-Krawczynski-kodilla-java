@@ -3,6 +3,7 @@ package patterns.factory.tasks;
 public class PaintingTask implements Task {
 
     private String taskName, color, whatToPaint, actualColor;
+    boolean executingTask = false;
 
     public PaintingTask(String taskName, String color, String whatToPaint) {
         this.taskName = taskName;
@@ -13,7 +14,7 @@ public class PaintingTask implements Task {
     @Override
     public void executeTask() {
         System.out.println("Execute: [" + taskName + "] - Start painting " + whatToPaint + " on " + color);
-
+        this.executingTask = true;
     }
 
     @Override
@@ -23,13 +24,7 @@ public class PaintingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        boolean isTaskExecuted = actualColor.equals(color);
-        if(isTaskExecuted) {
-            System.out.println("Task [" + taskName + "] is completed.");
-        } else {
-            System.out.println("Task [" + taskName + "] is still realizing - actual color of [" + whatToPaint + "] is " + actualColor + ".");
-        }
-        return isTaskExecuted;
+        return executingTask;
     }
 
     public void checkActualColor(String color) {

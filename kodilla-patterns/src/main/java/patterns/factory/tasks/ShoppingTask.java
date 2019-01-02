@@ -4,6 +4,7 @@ public final class ShoppingTask implements Task{
 
     private String taskName, whatToBuy;
     private double quantity, actualAmount;
+    private boolean executingTask = false;
 
     public ShoppingTask(String taskName, String whatToBuy, double quantity) {
         this.taskName = taskName;
@@ -21,6 +22,7 @@ public final class ShoppingTask implements Task{
 
     @Override
     public void executeTask() {
+        this.executingTask = true;
 
     }
 
@@ -31,16 +33,15 @@ public final class ShoppingTask implements Task{
 
     @Override
     public boolean isTaskExecuted() {
-        boolean isTaskExecuted = false;
         if (quantity <= actualAmount) {
-            isTaskExecuted = true;
+            executingTask = false;
             System.out.println("Task [" + taskName + "] All " + whatToBuy + " were bought - Task realized");
         } else {
             double rest = quantity - actualAmount;
             System.out.println("Task [" + taskName + "] is still realizing. Left [" + rest +"] " + whatToBuy + " to buy.");
 
         }
-        return isTaskExecuted;
+        return executingTask;
     }
 
     public void buy(double amount) {

@@ -3,7 +3,7 @@ package patterns.factory.tasks;
 public class DrivingTask implements Task {
 
     private String taskName, where, using;
-    private String actualPosition;
+    private boolean executingTask = false;
 
     public DrivingTask(String taskName, String where, String using) {
         this.taskName = taskName;
@@ -14,6 +14,7 @@ public class DrivingTask implements Task {
     @Override
     public void executeTask() {
         System.out.println("Execute: [" + taskName + "] - Start driving to " + where + " using " + using);
+        this.executingTask = true;
     }
 
     @Override
@@ -23,19 +24,7 @@ public class DrivingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        boolean isTaskExecuted = actualPosition.equals(where);
-        String result;
-        if (isTaskExecuted) {
-            result = "Task [" + taskName + "] is completed";
-        } else {
-            result = "Task [" + taskName + "] is still realizing";
-        }
-        System.out.println(result);
-        return isTaskExecuted;
+        return executingTask;
     }
 
-    public void setActualPosition(String actualPosition) {
-        System.out.println("Your actual position - [" + actualPosition + "]");
-        this.actualPosition = actualPosition;
-    }
 }

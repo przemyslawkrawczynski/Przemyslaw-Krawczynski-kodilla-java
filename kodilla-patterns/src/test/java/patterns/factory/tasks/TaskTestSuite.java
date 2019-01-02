@@ -17,7 +17,7 @@ public class TaskTestSuite {
         boolean isExecuted = shoppingTask.isTaskExecuted();
 
         //Then
-        Assert.assertEquals(false, isExecuted);
+        Assert.assertEquals(true, isExecuted);
         System.out.println("");
     }
 
@@ -30,11 +30,10 @@ public class TaskTestSuite {
         //When
         Task drivingTask = taskFactory.createTask(TaskFactory.DRIVING_TASK);
         drivingTask.executeTask();
-        ((DrivingTask) drivingTask).setActualPosition("Poznań");
         boolean isExecuted = drivingTask.isTaskExecuted();
 
         // Then
-        Assert.assertEquals(false, isExecuted);
+        Assert.assertEquals(true, isExecuted);
         System.out.println("");
     }
 
@@ -45,10 +44,9 @@ public class TaskTestSuite {
         //When
         Task paintingTask = taskFactory.createTask(TaskFactory.PAINTING_TASK);
         paintingTask.executeTask();
-        ((PaintingTask) paintingTask).checkActualColor("Black");
         boolean isExecuted = paintingTask.isTaskExecuted();
 
         //Then
-        Assert.assertEquals(true, isExecuted);
+        Assert.assertEquals(false, isExecuted);
     }
 }
