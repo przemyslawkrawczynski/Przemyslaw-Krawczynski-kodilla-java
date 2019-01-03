@@ -12,7 +12,7 @@ public class BoardGenerator {
         List<Place> singleRow = new ArrayList<>();
         IntStream.iterate(0, x -> x+1)
                 .limit(9)
-                .forEach(x -> singleRow.add(new Place(y + 1, x+1)));
+                .forEach(x -> singleRow.add(new Place(x + 1, y+1)));
 
         return singleRow;
     }

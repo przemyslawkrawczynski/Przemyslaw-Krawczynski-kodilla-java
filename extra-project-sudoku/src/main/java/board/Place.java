@@ -8,6 +8,7 @@ public class Place {
     private int x, y;
     private int value = -1;
     private List<Integer> possibleList = new ArrayList<>();
+    private boolean hasValue = false;
 
     public Place(int x, int y) {
         this.x = x;
@@ -23,7 +24,9 @@ public class Place {
 
     public void setValue(int value) {
         this.value = value;
-        possibleList.remove(value - 1);
+        removeValueFromPossibleList(value);
+        hasValue = true;
+
     }
 
     public String getPosition() {
@@ -34,7 +37,20 @@ public class Place {
         if (value != -1) {
             return Integer.toString(value);
         } else {
-            return Integer.toString(value);
+            return " ";
+        }
+    }
+
+    public boolean hasValue() {
+        return hasValue;
+    }
+
+    public void removeValueFromPossibleList(int value) {
+
+        for (int i=0; i < possibleList.size(); i++) {
+            if (value == possibleList.get(i)) {
+                possibleList.remove(i);
+            }
         }
     }
 
@@ -42,6 +58,11 @@ public class Place {
         return possibleList;
     }
 
-    public void checkNumber(List<Place> userChoiceValue) {
+    public void showPossibleValue() {
+        System.out.print("Possible values to position " + getPosition() + " - ");
+        possibleList.stream()
+                .map(num -> ("[" + num + "]"))
+                .forEach(System.out::print);
+        System.out.print("\n");
     }
 }
