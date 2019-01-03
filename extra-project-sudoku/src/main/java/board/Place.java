@@ -1,17 +1,18 @@
 package board;
 
-         import java.util.Iterator;
-         import java.util.List;
-         import java.util.stream.IntStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
 
 public class Place {
-    private int x,y;
-    private String value;
-    private List<Integer> possibleList;
+    private int x, y;
+    private int value = -1;
+    private List<Integer> possibleList = new ArrayList<>();
 
     public Place(int x, int y) {
         this.x = x;
         this.y = y;
+        generateList();
     }
 
     public void generateList() {
@@ -20,12 +21,27 @@ public class Place {
                 .forEach(n -> possibleList.add(n));
     }
 
-    public void setValue(String value) {
+    public void setValue(int value) {
         this.value = value;
+        possibleList.remove(value - 1);
     }
 
     public String getPosition() {
         return "" + x + y;
     }
-    public void checkNumber(List<Place> userChoiceValue) {}
+
+    public String getValue() {
+        if (value != -1) {
+            return Integer.toString(value);
+        } else {
+            return Integer.toString(value);
+        }
+    }
+
+    public List<Integer> getPossibleList() {
+        return possibleList;
+    }
+
+    public void checkNumber(List<Place> userChoiceValue) {
+    }
 }
