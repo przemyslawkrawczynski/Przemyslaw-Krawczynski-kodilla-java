@@ -7,16 +7,39 @@ import java.util.StringTokenizer;
 public class UserDecision {
 
     private boolean readyToSolve = false;
-    private Board board;
+    private boolean stillPlay = true;
 
-    public UserDecision(Board board) {
-        this.board = board;
+    public boolean askStillPlay() {
+        Scanner in = new Scanner(System.in);
+        boolean correctChoice = false;
+        System.out.println("Do you want resolve another Sudoku [Y]/[N]");
 
-        System.out.println("Bellow are list coordinates where first number are [COLUMN] number, and second are [ROW] number.");
-        board.showBoard("");
+        while (!correctChoice) {
+            String value = in.nextLine();
+            System.out.println("[" + value + "]");
+            switch (value.toUpperCase()) {
+                case "Y":
+                    stillPlay = true;
+                    correctChoice = true;
+                    readyToSolve = false;
+                    break;
+                case "N":
+                    stillPlay = false;
+                    correctChoice = true;
+                    break;
+                default:
+                    System.out.println("Wrong answer..");
+            }
+        }
+
+        return stillPlay;
     }
 
-    public Board getFillBoard() {
+        public Board getFillBoard(Board board) {
+
+        System.out.println("Bellow are list coordinates where first number are [COLUMN] number, and second are [ROW] number.");
+        board.showBoard("Position");
+
 
         while (!readyToSolve) {
 
@@ -29,7 +52,7 @@ public class UserDecision {
 
             while (!correctChoice) {
 
-                System.out.println("Enter number to table -> [Row Column Value] numbers 1-9");
+                System.out.println("Enter number to table -> [Column Row Value] numbers 1-9");
                 value = in.nextLine();
                 StringTokenizer userChoice = new StringTokenizer(value, " ");
 
@@ -90,5 +113,7 @@ public class UserDecision {
         return board;
     }
 
-
+    public boolean isStillPlay() {
+        return stillPlay;
+    }
 }
