@@ -10,11 +10,11 @@ public class UserDecision {
     private boolean stillPlay = true;
 
     public boolean askStillPlay() {
-        Scanner in = new Scanner(System.in);
         boolean correctChoice = false;
         System.out.println("Do you want resolve another Sudoku [Y]/[N]");
 
         while (!correctChoice) {
+            Scanner in = new Scanner(System.in);
             String value = in.nextLine();
             System.out.println("[" + value + "]");
             switch (value.toUpperCase()) {
@@ -33,6 +33,7 @@ public class UserDecision {
         }
 
         return stillPlay;
+
     }
 
         public Board getFillBoard(Board board) {
@@ -40,6 +41,7 @@ public class UserDecision {
         System.out.println("Bellow are list coordinates where first number are [COLUMN] number, and second are [ROW] number.");
         board.showBoard("Position");
 
+        Scanner in = new Scanner(System.in);
 
         while (!readyToSolve) {
 
@@ -47,8 +49,6 @@ public class UserDecision {
             String[] result = new String[3];
             boolean correctChoice = false;
             String value = null;
-
-            Scanner in = new Scanner(System.in);
 
             while (!correctChoice) {
 
@@ -110,6 +110,7 @@ public class UserDecision {
                 }
             }
         }
+
         return board;
     }
 

@@ -7,9 +7,7 @@ public class SudokuRunner {
 
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
         System.out.println("Sudoku");
-
         UserDecision userDecision = new UserDecision();
 
         while (userDecision.isStillPlay()) {

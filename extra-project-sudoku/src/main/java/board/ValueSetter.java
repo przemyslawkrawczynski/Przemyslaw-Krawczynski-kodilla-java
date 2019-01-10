@@ -62,7 +62,6 @@ public class ValueSetter {
     public void removeFromExpectedList(Place actualPlace, int value) {
 
         HashSet<Place> allPlaces = getNonExpectedList(actualPlace);
-
         allPlaces.stream()
                 .forEach(place -> place.removeValueAfterWrongSet(value));
 

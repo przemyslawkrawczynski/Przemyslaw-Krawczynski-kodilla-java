@@ -8,12 +8,10 @@ public class SmallBoard {
     private List<List<Place>> smallBoardList = new ArrayList<>();
 
     public void createSmallBoard(List<List<Place>> boardList) {
-
         int startColumn = 1;
         int startRow = 1;
 
         for (int j = 0; j < 3; j++) {
-
             for (int i = 0; i < 3; i++) {
                 List<Place> singleSmallBoard = new ArrayList<>();
                 for (int column = startColumn; column < startColumn + 3; column++) {
@@ -23,11 +21,9 @@ public class SmallBoard {
                 }
                 startColumn = startColumn + 3;
                 smallBoardList.add(singleSmallBoard);
-
             }
             startColumn = 1;
             startRow = startRow + 3;
-
         }
     }
 
@@ -36,23 +32,17 @@ public class SmallBoard {
     }
 
     public List<Place> getSingleBoardPlaces(Place place) {
-
         List<Place> singleBoardPlaces = new ArrayList<>();
 
         for (int j =0; j < smallBoardList.size(); j++) {
-
             List<Place> actualPlaces = smallBoardList.get(j);
-
             for (int i=0; i<actualPlaces.size(); i++) {
-
                 Place checkedPlace = actualPlaces.get(i);
                 if (checkedPlace.equals(place)) {
                     singleBoardPlaces = actualPlaces;
                 }
             }
-
        }
-
         return singleBoardPlaces;
     }
 }
