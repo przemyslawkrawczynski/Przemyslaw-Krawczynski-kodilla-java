@@ -2,31 +2,53 @@ package board;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
+import java.util.Objects;
+
 
 public class Place {
     private int x, y;
     private int value = -1;
-    private List<Integer> possibleList = new ArrayList<>();
+    private List<Integer> notExpectedValue = new ArrayList<>();
     private boolean hasValue = false;
+
+    public int getY() {
+        return y;
+    }
+
+    public int getX() {
+        return x;
+    }
 
     public Place(int x, int y) {
         this.x = x;
         this.y = y;
-        generateList();
     }
 
-    public void generateList() {
-        IntStream.iterate(1, n -> n + 1)
-                .limit(9)
-                .forEach(n -> possibleList.add(n));
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Place place = (Place) o;
+        return x == place.x &&
+                y == place.y;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+
 
     public void setValue(int value) {
         this.value = value;
-        removeValueFromPossibleList(value);
+        addValueToNotExpectedList(value);
         hasValue = true;
 
+    }
+
+    public void wrongSet() {
+        value = -1;
+        hasValue = false;
     }
 
     public String getPosition() {
@@ -45,24 +67,18 @@ public class Place {
         return hasValue;
     }
 
-    public void removeValueFromPossibleList(int value) {
+    public void addValueToNotExpectedList(int value) {
+        notExpectedValue.add(value);
+    }
 
-        for (int i=0; i < possibleList.size(); i++) {
-            if (value == possibleList.get(i)) {
-                possibleList.remove(i);
+    public void removeValueAfterWrongSet(int value) {
+
+        for (int i=0; i<notExpectedValue.size(); i++) {
+            if (value == notExpectedValue.get(i)) {
+                notExpectedValue.remove(notExpectedValue.get(i));
             }
         }
+
     }
 
-    public List<Integer> getPossibleList() {
-        return possibleList;
-    }
-
-    public void showPossibleValue() {
-        System.out.print("Possible values to position " + getPosition() + " - ");
-        possibleList.stream()
-                .map(num -> ("[" + num + "]"))
-                .forEach(System.out::print);
-        System.out.print("\n");
-    }
 }

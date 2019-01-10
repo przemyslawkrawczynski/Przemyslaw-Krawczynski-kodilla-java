@@ -7,13 +7,13 @@ import java.util.StringTokenizer;
 public class UserDecision {
 
     private boolean readyToSolve = false;
-    Board board;
+    private Board board;
 
     public UserDecision(Board board) {
         this.board = board;
 
-        System.out.println("Bellow are list coordinates where first number are [COLUMN] number and second are [ROW] number.");
-        board.showBoard();
+        System.out.println("Bellow are list coordinates where first number are [COLUMN] number, and second are [ROW] number.");
+        board.showBoard("");
     }
 
     public Board getFillBoard() {
@@ -63,6 +63,8 @@ public class UserDecision {
 
             board.getPlace(x, y).setValue(v);
             board.removeValueInRowAfterSet(y, v);
+            board.removeValueInColumnAfterSet(x, v);
+            board.removeValueInSmallBoardAfterSet(board.getPlace(x,y),v);
 
 
             System.out.println("Do you want set another position? [Y]/[N]");
