@@ -2,6 +2,7 @@ package board;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Set;
 
 public class ValueSetter {
 
@@ -13,12 +14,12 @@ public class ValueSetter {
         this.smallBoard = board.getSmallBoard();
     }
 
-    public HashSet<Place> getNonExpectedList(Place place) {
+    public Set<Place> getNonExpectedList(Place place) {
 
         int column = place.getX();
         int row = place.getY();
 
-        HashSet<Place> allPlacesColumnAndRow = new HashSet<>();
+        Set<Place> allPlacesColumnAndRow = new HashSet<>();
 
         board.getSingleColumn(column).stream()
                 .filter(p -> p.hasValue())
@@ -40,7 +41,7 @@ public class ValueSetter {
     public boolean checkPossibleSet(Place actualPlace, int value) {
 
 
-        HashSet<Place> allPlaces = getNonExpectedList(actualPlace);
+        Set<Place> allPlaces = getNonExpectedList(actualPlace);
         ArrayList<Integer> nonExpectedValue  = new ArrayList<>();
 
         allPlaces.stream()
@@ -58,14 +59,6 @@ public class ValueSetter {
 
         return canSet;
     }
-
-    public void removeFromExpectedList(Place actualPlace, int value) {
-
-        HashSet<Place> allPlaces = getNonExpectedList(actualPlace);
-        allPlaces.stream()
-                .forEach(place -> place.removeValueAfterWrongSet(value));
-
-     }
 
 }
 

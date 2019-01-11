@@ -8,6 +8,8 @@ public class SudokuRunner {
     public static void main(String[] args) {
 
         System.out.println("Sudoku");
+
+        ScannerSingleton.getInstance();
         UserDecision userDecision = new UserDecision();
 
         while (userDecision.isStillPlay()) {
@@ -21,6 +23,7 @@ public class SudokuRunner {
             userDecision.askStillPlay();
         }
 
+        ScannerSingleton.getInstance().closeScanner();
 //        game.getBoard().setValue(1,2,8);
 //        game.getBoard().setValue(2,1,2);
 //        game.getBoard().setValue(2,3,3);

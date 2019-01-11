@@ -71,6 +71,7 @@ public class Place {
         notExpectedValue.add(value);
     }
 
+    // poprawa
     public void removeValueAfterWrongSet(int value) {
 
         for (int i=0; i<notExpectedValue.size(); i++) {

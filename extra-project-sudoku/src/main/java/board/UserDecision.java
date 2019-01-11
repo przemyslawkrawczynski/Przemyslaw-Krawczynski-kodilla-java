@@ -12,10 +12,10 @@ public class UserDecision {
     public boolean askStillPlay() {
         boolean correctChoice = false;
         System.out.println("Do you want resolve another Sudoku [Y]/[N]");
+   //     Scanner in = new Scanner(System.in);
 
         while (!correctChoice) {
-            Scanner in = new Scanner(System.in);
-            String value = in.nextLine();
+            String value = ScannerSingleton.getInstance().getScanner().nextLine();
             System.out.println("[" + value + "]");
             switch (value.toUpperCase()) {
                 case "Y":
@@ -31,7 +31,6 @@ public class UserDecision {
                     System.out.println("Wrong answer..");
             }
         }
-
         return stillPlay;
 
     }
@@ -41,7 +40,7 @@ public class UserDecision {
         System.out.println("Bellow are list coordinates where first number are [COLUMN] number, and second are [ROW] number.");
         board.showBoard("Position");
 
-        Scanner in = new Scanner(System.in);
+      //  Scanner in = new Scanner(System.in);
 
         while (!readyToSolve) {
 
@@ -53,7 +52,7 @@ public class UserDecision {
             while (!correctChoice) {
 
                 System.out.println("Enter number to table -> [Column Row Value] numbers 1-9");
-                value = in.nextLine();
+                value = ScannerSingleton.getInstance().getScanner().nextLine();
                 StringTokenizer userChoice = new StringTokenizer(value, " ");
 
                 int num = 0;
@@ -94,7 +93,7 @@ public class UserDecision {
             boolean setAnotherPositon = false;
 
             while (!setAnotherPositon) {
-                value = in.nextLine();
+                value = ScannerSingleton.getInstance().getScanner().nextLine();
                 System.out.println("[" + value + "]");
                 switch (value.toUpperCase()) {
                     case "Y":
