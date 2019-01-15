@@ -77,7 +77,7 @@ public class UserDecision {
                     System.out.println("Unexpected format [you give less or more than 3 arguments 1] - Correct format -> Row Column Value");
                 }
             }
-            System.out.println("Your choice [Row: " + result[0] + "] [Column: " + result[1] + "] - value [" + result[2] + "]");
+            System.out.println("Your choice [Column: " + result[0] + "] [Row: " + result[1] + "] - value [" + result[2] + "]");
 
             int x = Integer.parseInt(result[0]);
             int y = Integer.parseInt(result[1]);
