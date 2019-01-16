@@ -50,8 +50,15 @@ public class InvoiceDaoTestSuite {
                 .map(item -> item.getValue().intValue())
                 .mapToInt(v -> v).sum();
 
+        int idInvoice = invoice.getId();
+
+
         //Then
         Assert.assertEquals(122, result);
+        Assert.assertNotEquals(0, idInvoice);
+        //CleanUp
+
+        invoiceDao.delete(invoice);
 
     }
 }

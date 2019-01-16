@@ -24,6 +24,7 @@ public class Item {
         this.invoice = invoice;
     }
 
+    public Item() {}
 
     public Item(Product product, BigDecimal price, int qantity, BigDecimal value) {
         this.product = product;
