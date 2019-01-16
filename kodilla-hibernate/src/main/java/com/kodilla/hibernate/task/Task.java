@@ -1,11 +1,24 @@
 package com.kodilla.hibernate.task;
 
 import com.kodilla.hibernate.tasklist.TaskList;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@NamedQueries({
+        @NamedQuery(
+                name = "Task.retrieveLongTask",
+                query = "FROM Task WHERE duration > 10"
+        ),
+        @NamedQuery(
+                name = "Task.retrieveShortTask",
+                query = "From Task WHERE duration <=10"
+        ),
+        @NamedQuery(
+                name = "Task.retrieveTasksWithEnoughtTime",
+                query = "From Task WHERE duration > :DURATION"
+        )
+})
 
 @Entity
 @Table(name = "TASKS")

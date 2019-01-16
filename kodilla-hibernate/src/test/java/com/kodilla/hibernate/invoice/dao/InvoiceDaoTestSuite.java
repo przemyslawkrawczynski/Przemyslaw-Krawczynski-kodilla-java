@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.awt.*;
 import java.math.BigDecimal;
 
 @RunWith(SpringRunner.class)
@@ -58,7 +57,7 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotEquals(0, idInvoice);
         //CleanUp
 
-        invoiceDao.delete(invoice);
+//        invoiceDao.delete(invoice);
 
     }
 }

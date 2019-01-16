@@ -5,6 +5,11 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(
+        name = "Company.findByText",
+        query = "FROM Company where SUBSTRING(name, 1,3) LIKE :TEXT"
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
